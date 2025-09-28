@@ -6,6 +6,7 @@ import { Canvas, useFrame } from '@react-three/fiber';
 import { MeshDistortMaterial, Sphere, ScrollControls, Scroll, useScroll, useGLTF, Environment } from '@react-three/drei';
 import HyperspeedWrapper from "./HyperSpeedWrapper";
 import * as THREE from 'three';
+import Link from 'next/link'
 
 // --- Enhanced Text Block Component with Proper Animations ---
 const AnimatedTextBlock = ({ textData, currentTextIndex }) => {
@@ -196,6 +197,7 @@ const AnimatedTextBlock = ({ textData, currentTextIndex }) => {
                     ))
                   ) : (
                     // Single button
+                    <Link href={"https://app.flowzmith.com/login"} target='_blank'>
                     <button
                       className={item.cta.classes || config.cta?.classes || "px-10 py-4 bg-cyan-400 text-black font-bold rounded-lg text-xl pointer-events-auto hover:bg-cyan-300 transition-all duration-300 shadow-lg shadow-cyan-400/50 hover:scale-105"}
                       style={generateStyles(item.cta.styles || config.cta?.styles)}
@@ -203,6 +205,7 @@ const AnimatedTextBlock = ({ textData, currentTextIndex }) => {
                     >
                       {item.cta.text || "Start Building Now"}
                     </button>
+                    </Link>
                   )}
                 </div>
               )}
@@ -605,9 +608,11 @@ const textData = [
         <div>
           <h1 className='text-white font-black font-mono text-4xl'>Flowzmith</h1>
         </div>
+        <Link href={"https://app.flowzmith.com/login"} target='_blank'>
         <button className='px-8 py-4 bg-gradient-to-r from-cyan-500 to-teal-600 text-white font-bold rounded-lg text-lg pointer-events-auto hover:from-cyan-400 hover:to-teal-500 transition-all duration-300 shadow-lg hover:scale-105 mr-4'>
           Start Building Now
         </button>
+        </Link>
       </div>
 
       {/* 3D Scene */}
